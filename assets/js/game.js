@@ -1,3 +1,9 @@
+// Game States
+// "WIN" - Player robot has defeated all enemy robots
+//    * Fight all enemy robots
+//    * Defeat each enemy robot
+// "LOSE" - Player robot's health is zero or less
+
 var playerName = window.prompt("Name Thy Mech!");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -6,11 +12,11 @@ var playerMoney = 10;
 // Logging player name, health, and attack here
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Kojiro";
+var enemyNames = ["2E", "Emil", "Ultimate Bob"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
+var fight = function(enemyName) {
     // Alert users that the round is starting
     window.alert("Welcome to the Arena, Gladiators!")
 
@@ -68,4 +74,6 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
 }
 };
 
-fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
